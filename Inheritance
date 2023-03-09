@@ -1,0 +1,134 @@
+main Java
+public class Main {
+    public static void main(String[] args) {
+       Animal dog = new Dog("oopises","zevel");
+       Animal poodle = new Poodle("TOBY","rooibies","six");
+       Animal wolf = new Wolf("oscar","furties","the wolves");
+
+
+
+        System.out.println(dog.toString());
+        System.out.println(poodle.toString());
+        System.out.println(wolf.toString());
+
+
+    }
+
+}
+Animal.java
+public class Animal {
+    String name;
+
+   public Animal(String name ) {
+       this.name = name;
+
+   }
+    public String toString(){
+       return "Animal: "+name;
+   }
+
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+}
+Dog.java
+public class Dog  extends Animal{
+   public String favoriteFood;
+    public Dog(String name,String favoriteFood) {
+      super(name);
+         this.favoriteFood=favoriteFood;
+    }
+
+    public String getFavoriteFood() {
+        return favoriteFood;
+    }
+
+
+    public  String toString() {
+        return "Dog:" +favoriteFood;
+    }
+
+    public void setFavoriteFood(String favoriteFood) {
+        this.favoriteFood = favoriteFood;
+
+    }
+
+    public void  bark(){
+       System.out.println("woof woof");
+   }
+}
+Wolf.java
+public class Wolf extends Dog {
+     private String nameOfpack;
+
+     public Wolf(String name, String favoriteFood, String nameOfpack) {
+         super(name, favoriteFood);
+         this.nameOfpack = nameOfpack;
+     }
+
+     public String getNameOfpack() {
+         return nameOfpack;
+     }
+
+     public void setNameOfpack(String nameOfpack) {
+         this.nameOfpack = nameOfpack;
+     }
+     public String toString() {
+         return "wolf:"+getNameOfpack();
+     }
+ }
+Poodle.java
+public class Poodle extends Dog{
+     private String numberOfponytail;
+
+    public Poodle(String name,String favoriteFood,String numberOfponytail) {
+        super(name,favoriteFood);
+        this.numberOfponytail=numberOfponytail;
+    }
+
+    public String getNumberOfponytail() {
+        return numberOfponytail;
+    }
+
+    public void setNumberOfponytail(String numberOfponytail) {
+        this.numberOfponytail = numberOfponytail;
+    }
+
+
+    public  String toString(){
+        return "poodle :" +numberOfponytail;
+    }
+
+
+    public  void bark(){
+        System.out.println("woof of a poodle");
+    }
+}
+Horse.java
+   private boolean racingHorse = false;
+
+    public Horse(String name,boolean racingHorse) {
+        super(name);
+        this.racingHorse=racingHorse;
+    }
+
+
+    public boolean isRacingHorse() {
+        return racingHorse;
+    }
+
+    public void setRacingHorse(boolean racingHorse) {
+        this.racingHorse = racingHorse;
+    }
+
+
+    public void Neigh(){
+        System.out.println("neigh"+ name+" "+racingHorse+"");
+    }
+}
+
