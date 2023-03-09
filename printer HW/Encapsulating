@@ -1,0 +1,48 @@
+Main
+public class Main {
+    public static void main(String[] args) {
+        Printer printer = new Printer(50,true);
+        System.out.println(printer.addToner(50));
+        System.out.println("initial number of pages: " + printer.getPagePrinted());
+        int pagePrinted= printer.printPages(4);
+        System.out.println("pages printed was: " +pagePrinted +" new total print count for printed = " +printer.getPagePrinted());
+        pagePrinted= printer.printPages(2);
+        System.out.println("pages printed was "+pagePrinted+" new total print count for printer = "+ printer.getPagePrinted());
+
+    }
+}
+
+Printer class
+public int printPages( int pages){
+        int pagesToprint = pages;
+        if(this.Duplex){
+            pagesToprint=(pages/2)+(pages%2);
+            System.out.println("print int duplex mode.");
+        }
+        this.pagePrinted += pagesToprint;
+        return pagesToprint;
+}
+
+    public int gettonerLevel() {
+        return tonerLevel;
+    }
+
+    public void settonerLevel(int tonerLevel) {
+        this.tonerLevel = tonerLevel;
+
+    }
+    public boolean isDuplex() {
+        return Duplex;
+    }
+    public void setDuplex(boolean duplex) {
+        this.Duplex = duplex;
+    }
+
+    public int getPagePrinted() {
+        return pagePrinted;
+    }
+
+    public void setPagePrinted(int pagePrinted) {
+        this.pagePrinted = pagePrinted;
+    }
+}
